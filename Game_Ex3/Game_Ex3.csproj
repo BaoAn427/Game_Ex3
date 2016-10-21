@@ -38,9 +38,16 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EffectManagement.cs" />
+    <Compile Include="EntityVisible.cs" />
+    <Compile Include="GameEntity.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelSprite2D.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextureManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

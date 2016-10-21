@@ -7,15 +7,21 @@ namespace Game_Ex3
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Main : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        Texture2D _Texture;
+        Effect _Effect;
+        float _SCALE = 0.5f;
+
+        public Main()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = (int)(1920 * _SCALE);
+            graphics.PreferredBackBufferHeight = (int)(1080 * _SCALE);
         }
 
         /// <summary>
@@ -41,6 +47,8 @@ namespace Game_Ex3
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            this.IsMouseVisible = true;
+            _Texture = this.Content.Load<Texture2D>("bg");
         }
 
         /// <summary>
@@ -63,7 +71,6 @@ namespace Game_Ex3
                 Exit();
 
             // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -76,7 +83,10 @@ namespace Game_Ex3
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, Global.GetEffect(), null);
+            //spriteBatch.Draw(_Texture, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(_Texture, new Vector2(0, 0), null, Color.White, 0f, Vector2.Zero, _SCALE, SpriteEffects.None, 1.0f);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

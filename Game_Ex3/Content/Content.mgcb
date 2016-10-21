@@ -13,12 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin aEffect.fx
-/importer:EffectImporter
-/processor:EffectProcessor
-/processorParam:DebugMode=Auto
-/build:aEffect.fx
-
 #begin bg.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
